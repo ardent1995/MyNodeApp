@@ -48,6 +48,10 @@ app.get('/messages', function (req, res) {
 
 // Get the list of destinations, convert it to JSON and send it back to client 
 app.get('/destination', function (req, res) {
+
+    console.log(req.headers['x-device-type']);
+    console.log(req.headers['x-foo'])
+
     var count = req.query.count != undefined ? req.query.count : req.query.count = 100;
     if(req.query.country){
         var countrySpots = destinations.filter(function(destination) {
